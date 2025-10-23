@@ -19,6 +19,8 @@ public class AbstractFactoryTest {
         DatabaseFactory cachedMySqlFactory = DatabaseFactoryProducer.getCachedFactory("MySQL");
         Connection cachedMysqlConnection = cachedMySqlFactory.createConnection();
         cachedMysqlConnection.connect();
+        Query cachedMysqlQuery = cachedMySqlFactory.createQuery();
+        cachedMysqlQuery.execute("SELECT * FROM users");
 
         DatabaseFactory cachedPostgresFactory = DatabaseFactoryProducer.getCachedFactory("PostgreSQL");
         Connection cachedPostgresConnection = cachedPostgresFactory.createConnection();
